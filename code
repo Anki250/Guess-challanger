@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{
+    int num, guess, nguess = 0;
+    srand(time(0));
+    num = rand() % 100 + 1; // this line genrates the number between 1 to 100.
+    // printf("Your random number is %d", num);
+    //  we are using the do while code cause we are keeping the code to be run until we got the right guess.
+    do
+    {
+        printf("Guess the number between 1 to 100 \n");
+        scanf("%d", &guess);
+        if (guess > num)
+        {
+            printf("Lower number please. \n");
+        }
+        else if (guess < num)
+        {
+            printf("Higher number please. \n");
+        }
+        else
+        {
+            printf("You guessed it. winner in %d guesses \n", nguess);
+        }
+
+        nguess++;
+    } while (guess != num);
+    return 0;
+}
